@@ -1,0 +1,20 @@
+{
+  "name": "twitterbot",
+  "version": "1.0.0",
+  "description": "A bot to search and retweet tweets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/awbridgers/twitterBot"
+  },
+  "author": "Adam Bridgers",
+  "license": "ISC",
+  "dependencies": {
+    "moment-timezone": "^0.5.14",
+    "node-cron": "^1.2.1",
+    "twit": "^2.2.9"
+  }
+}

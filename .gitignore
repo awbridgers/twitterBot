@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# My Twitter Keys
+config.js

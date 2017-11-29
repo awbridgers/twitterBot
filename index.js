@@ -17,9 +17,15 @@ T.get('search/tweets', {q: 'Your search query here', count: 100, result_type: "r
 
     //loop through the array of tweets returned by twitter and filter out manual RT's and possibly NSFW material
     data.statuses.map((x)=> {
-      if(x.text.substring(0,2) != "RT" && x.possibly_sensitive === false){
-        tweetArray.add(x);      //add tweets to the set (using set to avoid adding duplicate tweets)
+      if(x.text.substring(0,2) != "RT"){        //remove retweets from the list
+        if(!x.hasOwnProperty("possibly_sensitive")){        //if it doesn't have a link, attempt to retweet.
+        tweetArray.add(x);
+        //console.log(tweetArray.size)
       }
+      else if(x.hasOwnProperty("possibly_sensitive") && x.possibly_sensitive===false){    //if it containst link, make sure its safe
+        tweetArray.add(x)
+      }
+  }
     });
 
     let tweets = [];

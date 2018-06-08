@@ -1,16 +1,22 @@
 let Twit = require('twit');
 let config = require('./config.js');
-let cron = require('node-cron');
 let moment = require('moment-timezone')
 
-const T = new Twit(config);       //setup Twit with twitter API keys
+require('dotenv').config();
 
 
-//use cron to schedule bot to check tweets every hour
-let job = cron.schedule('0 0-23 * * *', ()=>{
+const APP_CONFIG = {
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
+}
+
+const T = new Twit(APP_CONFIG);       //setup Twit with twitter API keys
 
 
-T.get('search/tweets', {q: 'Your search query here', count: 100, result_type: "recent"}, (err, data,response) => {
+
+T.get('search/tweets', {q: 'wake forest offer receive OR received', count: 100, result_type: "recent"}, (err, data,response) => {
   if (!err){
     let tweetArray = new Set();
     let idArray = [];
@@ -50,7 +56,6 @@ T.get('search/tweets', {q: 'Your search query here', count: 100, result_type: "r
     console.log(err);   //log any errors
   }
 });
-}, null,true);
 
 //function to retweet tweets
 let retweet = (id) => T.post('statuses/retweet/:id', {id: id}, (err, response) => {

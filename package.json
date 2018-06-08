@@ -13,6 +13,7 @@
   "author": "Adam Bridgers",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "moment-timezone": "^0.5.14",
     "node-cron": "^1.2.1",
     "twit": "^2.2.9"

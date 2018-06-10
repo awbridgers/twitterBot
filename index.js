@@ -1,5 +1,4 @@
 let Twit = require('twit');
-let config = require('./config.js');
 let moment = require('moment-timezone')
 
 require('dotenv').config();

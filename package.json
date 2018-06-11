@@ -2,11 +2,11 @@
   "name": "twitterbot",
   "version": "1.0.0",
   "description": "A bot to search and retweet tweets",
-  "main": "index.js",
+  "main": "app.js",
   "engine": "6.10.3",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.0.0",
+    "express": "^4.16.3",
     "moment-timezone": "^0.5.14",
     "node-cron": "^1.2.1",
     "twit": "^2.2.9"

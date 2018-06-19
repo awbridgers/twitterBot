@@ -15,6 +15,7 @@
   "author": "Adam Bridgers",
   "license": "ISC",
   "dependencies": {
+    "array-includes": "^3.0.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "moment-timezone": "^0.5.14",

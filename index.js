@@ -65,7 +65,7 @@ T.get('search/tweets', {q: 'wake forest commit OR committed exclude:retweets exc
   if (!err){
     let tweetArray = new Set();
     let idArray = [];
-    data.statuses.map((x)=>console.log(x.text))
+    
 
     //loop through the array of tweets returned by twitter and filter out manual RT's and possibly NSFW material
     data.statuses.map((x)=> {

@@ -47,7 +47,7 @@ T.get('search/tweets', {q: 'wake forest offer receive OR received exclude:retwee
 
     console.log(date);    //log the date and time to quickly determine if the bot is running every hour
     console.log("Attempting to Retweet " + tweets.length + " tweets...");
-    tweets.map((x)=>console.log(x.text));   //log the tweet text just for testing
+    //tweets.map((x)=>console.log(x.text));   //log the tweet text just for testing
     tweets.map((x)=> retweet(x.id_str));    //retweet the tweets in the array
   }
 
@@ -65,7 +65,7 @@ T.get('search/tweets', {q: 'wake forest commit OR committed exclude:retweets exc
   if (!err){
     let tweetArray = new Set();
     let idArray = [];
-    
+
 
     //loop through the array of tweets returned by twitter and filter out manual RT's and possibly NSFW material
     data.statuses.map((x)=> {

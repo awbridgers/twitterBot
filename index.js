@@ -18,7 +18,7 @@ const T = new Twit(APP_CONFIG);       //setup Twit with twitter API keys
 
 //search and retweet scholarship offers
 
-T.get('search/tweets', {q: 'wake forest offer receive OR received exclude:retweets exclude:replies', count: 100, result_type: "recent"}, (err, data,response) => {
+T.get('search/tweets', {q: '"wake forest" offer receive OR received exclude:retweets exclude:replies', count: 100, result_type: "recent"}, (err, data,response) => {
   if (!err){
     let tweetArray = new Set();
     let idArray = [];
@@ -61,7 +61,7 @@ T.get('search/tweets', {q: 'wake forest offer receive OR received exclude:retwee
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //search and rewtweet commits
-T.get('search/tweets', {q: 'wake forest commit OR committed exclude:retweets exclude:replies', count: 100, result_type: "recent"}, (err, data,response) => {
+T.get('search/tweets', {q: '"wake forest" commit OR committed exclude:retweets exclude:replies', count: 100, result_type: "recent"}, (err, data,response) => {
   if (!err){
     let tweetArray = new Set();
     let idArray = [];

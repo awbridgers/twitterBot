@@ -46,7 +46,7 @@ T.get('search/tweets', {q: '"wake forest" offer receive OR received exclude:retw
     let date = moment(d).tz(myTimezone).format(myDatetimeFormat);
 
     console.log(date);    //log the date and time to quickly determine if the bot is running every hour
-    console.log("Attempting to Retweet " + tweets.length + " tweets...");
+    console.log("Attempting to Retweet " + tweets.length + " offer tweets...");
     //tweets.map((x)=>console.log(x.text));   //log the tweet text just for testing
     tweets.map((x)=> retweet(x.id_str));    //retweet the tweets in the array
   }
@@ -91,7 +91,7 @@ T.get('search/tweets', {q: '"wake forest" -turnover -foul commit OR committed ex
     let date = moment(d).tz(myTimezone).format(myDatetimeFormat);
 
     console.log(date);    //log the date and time to quickly determine if the bot is running every hour
-    console.log("Attempting to Retweet " + tweets.length + " tweets...");
+    console.log("Attempting to Retweet " + tweets.length + " commit tweets...");
     //console.log("testing blocker " + blockedTweets[0])
     tweets.map((x)=>console.log(x.text, x.id_str));   //log the tweet text just for testing
     tweets.map((x)=> retweet(x.id_str));    //retweet the tweets in the array

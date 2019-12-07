@@ -61,7 +61,7 @@ T.get('search/tweets', {q: '"wake forest" offer receive OR received exclude:retw
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //search and rewtweet commits
-T.get('search/tweets', {q: '"wake forest" -turnover -foul -penalty -penalties -fraud -crime commit OR committed exclude:retweets exclude:replies', count: 100, result_type: "recent"}, (err, data,response) => {
+T.get('search/tweets', {q: '"wake forest" -racism -Confederate -turnover -foul -penalty -penalties -fraud -crime commit OR committed exclude:retweets exclude:replies', count: 100, result_type: "recent"}, (err, data,response) => {
   if (!err){
     let tweetArray = new Set();
     let idArray = [];
